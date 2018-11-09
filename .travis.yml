@@ -18,5 +18,10 @@ after_success:
   - docker build -t ngzikai/multi-nginx ./nginx
 
   #Login to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
   #Take images and push to docker hub
+  - docker push ngzikai/multi-client
+  - docker push ngzikai/multi-nginx
+  - docker push ngzikai/multi-server
+  - docker push ngzikai/multi-worker
