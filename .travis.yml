@@ -14,7 +14,7 @@ script:
 after_success:
   - docker build -t ngzikai/multi-client ./client
   - docker build -t ngzikai/multi-worker ./worker
-  - docker build -t ngzikai/mult-server ./server
+  - docker build -t ngzikai/multi-server ./server
   - docker build -t ngzikai/multi-nginx ./nginx
 
   #Login to the docker CLI
